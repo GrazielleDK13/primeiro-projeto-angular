@@ -14,7 +14,7 @@ import { NovaTransferenciaComponent } from './nova-transferencia/nova-transferen
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule        //importado o modulo de formulario
   ],
   providers: [],
   bootstrap: [AppComponent]
