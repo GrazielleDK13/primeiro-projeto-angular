@@ -1,2 +1,13 @@
+<app-nova-transferencia (aoTranferir)="transferir($event)"></app-nova-transferencia>
 
-<app-nova-transferencia></app-nova-transferencia>
+
+<!-- FORMA SIMPLES MENOS VERBOSA -->
+<!-- USAMOS A INTEROGAÇÃO PARA NÃO QUEBRAR O CODIGO -->
+<p> Valor: {{transferencia?.valor}}</p>
+<p> Destino: {{transferencia?.destino}}</p>
+
+<!--
+  <~ FORMA ROBUSTA ~>
+  <p> Valor: {{valor}}</p>
+  <p> Destino: {{destino}}</p>
+ -->

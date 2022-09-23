@@ -6,15 +6,23 @@
 
     <div class="form-field ">
 
-        <label class="label" for="valor">Valor</label>
-        <input  class="input" id="valor" type="text">
+      <label class="label" for="valor">Valor</label>
+      <input class="input" id="valor" type="text" [(ngModel)]="valor" name="valor" />
+      <!-- ngModel e uma diretiva ,atraves dele conseguimos passar o valor que ta no tenpleite para a class-->
+      <!--  ngModel só ele sem conchetes e usado quando vc quer usar so string ,para usar variavel usamos ele  dentro de [()] isso se chama Two-way data binding-->
+      <!--  [(ngModel)] isso se chama com ele o valor inicial pode ser alterado -->
+
 
     </div>
 
     <div class="form-field ">
 
-        <label class="label" for="Destino">Destino</label>
-        <input  class="input" id="Destino" type="text">
+      <!-- []  property binding usamos ele quando queremos que o valor inicial do console permanesa -->
+      <!-- [()] Two-way data binding isso se chama com ele o valor inicial pode ser alterado -->
+      <!-- <input  class="input" id="Destino" type="text" [ngModel]="destino" name="destino"> -->
+
+      <label class="label" for="Destino">Destino</label>
+      <input class="input" id="Destino" type="text" [(ngModel)]="destino" name="destino">
 
     </div>
 
@@ -27,4 +35,3 @@
   </form>
 
 </section>
-
