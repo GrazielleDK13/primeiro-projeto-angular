@@ -13,9 +13,11 @@ export class NovaTransferenciaComponent implements OnInit {
     // public valor  = '';
     // public destino = '';
 
-    @Output() aoTranferir = new EventEmitter<any>();
+    @Output() aoTranferir = new EventEmitter<any>(); //DUVIDA
 
-    // o @Output() serve para criar um evento
+    // o @Output() serve para criar um evento ele e um decoraitor
+
+    //valores do input
 
     valor!: number;
     destino!: number;
@@ -33,8 +35,8 @@ export class NovaTransferenciaComponent implements OnInit {
     this.limparCampos();
 
 
-    // console.log('valor: ', this.valor);
-    // console.log('Destino: ', this.destino);
+    // console.log('valor: ', this.valor);   isso e para aparecer os valore no console
+    // console.log('Destino: ', this.destino); isso e para aparecer os valore no console
 
   }
 
@@ -44,8 +46,6 @@ export class NovaTransferenciaComponent implements OnInit {
     this.destino = 0 ;
 
   }
-
-
 
   constructor() {
 
@@ -57,9 +57,6 @@ export class NovaTransferenciaComponent implements OnInit {
 
 
   }
-
-
-
 
 
 }

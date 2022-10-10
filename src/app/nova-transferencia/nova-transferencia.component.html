@@ -1,6 +1,6 @@
 <section class="container">
 
-  <form class="formulario" (ngSubmit)="transferir()">
+ <form class="formulario" (ngSubmit)="transferir()">   <!-- chama a função transferir -->
 
     <h2 class="titulo">Nova Transferéncia</h2>
 
@@ -8,10 +8,10 @@
 
       <label class="label" for="valor">Valor</label>
       <input class="input" id="valor" type="text" [(ngModel)]="valor" name="valor" />
-      <!-- ngModel e uma diretiva ,atraves dele conseguimos passar o valor que ta no tenpleite para a class-->
-      <!--  ngModel só ele sem conchetes e usado quando vc quer usar so string ,para usar variavel usamos ele  dentro de [()] isso se chama Two-way data binding-->
-      <!--  [(ngModel)] isso se chama com ele o valor inicial pode ser alterado -->
 
+      <!--  ngModel e uma diretiva ,atraves dele conseguimos passar o valor que ta no tenpleite para a class-->
+      <!--  ngModel só ele,sem conchetes e usado quando vc quer usar so string ,para usar variavel usamos ele  dentro de [()] isso se chama Two-way data binding-->
+      <!--  [(ngModel)] isso se chama com ele o valor inicial pode ser alterado -->
 
     </div>
 
@@ -28,7 +28,7 @@
 
     <div class="botao-wrapper ">
 
-      <button class="botao " type="submit">Transferir</button>
+      <button class="botao" type="submit">Transferir</button>
 
     </div>
 

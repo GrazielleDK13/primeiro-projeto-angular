@@ -1,0 +1,56 @@
+
+<table>
+
+  <thead>
+
+    <th>Data</th>
+    <th>Valor</th>
+    <th>destino</th>
+
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let tranferencia of transferencias">
+
+      <td>{{ transferencia.data | date:'shorts'}}</td>
+      <td>{{ transferencia.valor }}</td>
+      <td>{{ transferencia.destino }}</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+
+
+
+
+<!-- FORMA BASICA -->
+<!-- <div *ngFor="let transferencia of  transferencias">
+
+  <p> Data: {{transferencia?.data}}</p>
+  <p> Valor: {{transferencia?.valor}}</p>
+  <p> Destino: {{transferencia?.destino}}</p>
+
+</div> -->
+
+<!-- FORMA SIMPLES MENOS VERBOSA -->
+<!-- USAMOS A INTEROGAÇÃO PARA NÃO QUEBRAR O CODIGO -->
+
+<!--
+   <p> Valor: {{transferencias?.valor}}</p>
+  <p> Destino: {{transferencias?.destino}}</p>
+-->
+
+
+
+<!--
+
+  <~ FORMA ROBUSTA ~>
+
+  <p> Valor: {{valor}}</p>
+  <p> Destino: {{destino}}</p>
+
+ -->

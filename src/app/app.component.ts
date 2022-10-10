@@ -10,7 +10,7 @@ export class AppComponent {
 
   // <~~ FORMA SIMPLES MENOS VERBOSA ~~>
 
-  transferencia: any;
+  transferencias: any [] = [];
 
   //FORMA ROBUSTA E VERBOSA
 
@@ -18,16 +18,22 @@ export class AppComponent {
   // valor!: number;
 
   transferir($event: any) {
-    
+
     console.log($event);
+
+    const tranferencia = {...$event , data: new Date()};
+
+    this.transferencias.push(tranferencia);
 
     // <~~ FORMA SIMPLES MENOS VERBOSA ~~>
 
-    this.transferencia = $event;
+    // this.transferencia = $event;
 
     //FORMA ROBUSTA E VERBOSA
 
     // this.destino = $event.destino;
     // this.valor = $event.valor;
+
   }
+  
 }
