@@ -1,21 +1,26 @@
 
-<table>
+<table class="tabela">
 
-  <thead>
+  <thead class="tabela__cabecalho">
 
-    <th>Data</th>
-    <th>Valor</th>
-    <th>destino</th>
+    <th class="conteudo">Data</th>
+    <th class="conteudo">Valor</th>
+    <th class="conteudo">Destino</th>
 
   </thead>
 
-  <tbody>
+  <tbody class="tabela__linha">
 
-    <tr *ngFor="let tranferencia of transferencias">
+    <!-- Exibir uma lista de dados através da diretiva *ngFor -->
 
-      <td>{{ transferencia.data | date:'shorts'}}</td>
-      <td>{{ transferencia.valor }}</td>
-      <td>{{ transferencia.destino }}</td>
+    <tr class="tabela__linha" *ngFor="let transferencia of transferencias">
+
+      <!-- Para usar um modelo de data ,só olhar no site do angula e pesquisar DatePipe ,exemplo: short -->
+      <!-- Para deichar a data em português só olhar no site do angula e pesquisar LOCALE_ID ,a alteração vais ser feita na pasta app module-->
+
+      <td class="conteudo2">{{ transferencia.data  | date:'short'}}</td>
+      <td class="conteudo2">{{ transferencia.valor | currency }}</td>
+      <td class="conteudo2">{{ transferencia.destino }}</td>
 
     </tr>
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import Transferencia from './interfaces/Tranferencia';
 
 @Component({
   selector: 'app-extrato',
@@ -7,22 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./extrato.component.css']
 })
 
-interface Transferencia {
-
-  data: string;
-  valor:string;
-  destino: string;
-
-}
-
 
 export class ExtratoComponent implements OnInit {
 
-  // @Input() vai servir para permitir a ser criada uma propriedade
+  // @Input() para receber valores em um componente
 
-  @Input()transferencias: Transferencia[] = [];  //DUVIDA
-
-
+  @Input()transferencias: Transferencia [] = [];
 
   constructor() { }
 
