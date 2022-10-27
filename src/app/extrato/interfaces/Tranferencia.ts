@@ -3,8 +3,8 @@
 interface Transferencia {
 
   data: string;
-  valor:string;
-  destino: string;
+  valor: number | string;
+  destino: number | string;
 
 }
 

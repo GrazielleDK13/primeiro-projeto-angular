@@ -9,7 +9,7 @@
 
   </thead>
 
-  <tbody class="tabela__linha">
+  <tbody class="tabela__linha" *ngIf="transferencias.length > 0; else listaVazia " >
 
     <!-- Exibir uma lista de dados através da diretiva *ngFor -->
 
@@ -27,6 +27,12 @@
   </tbody>
 
 </table>
+
+<<ng-template #listaVazia>
+
+  <p> Nenhuma operação cadastrada </p>
+
+</ng-template>
 
 
 
@@ -48,8 +54,6 @@
    <p> Valor: {{transferencias?.valor}}</p>
   <p> Destino: {{transferencias?.destino}}</p>
 -->
-
-
 
 <!--
 

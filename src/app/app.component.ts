@@ -1,4 +1,6 @@
+import { TransferenciaService } from './services/transferencia.service';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,34 +8,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
   title = 'appangular';
 
-  // <~~ FORMA SIMPLES MENOS VERBOSA ~~>
 
-  transferencias: any [] = [];
 
-  //FORMA ROBUSTA E VERBOSA
+  constructor(private service: TransferenciaService){
 
-  // destino!: number;
-  // valor!: number;
+  }
 
   transferir($event: any) {
 
     console.log($event);
-
-    const tranferencia = {...$event , data: new Date()};
-
-    this.transferencias.push(tranferencia);
-
-    // <~~ FORMA SIMPLES MENOS VERBOSA ~~>
-
-    // this.transferencia = $event;
-
-    //FORMA ROBUSTA E VERBOSA
-
-    // this.destino = $event.destino;
-    // this.valor = $event.valor;
+    this.service.adicionar($event);
 
   }
-  
+
+
+  // <~~ FORMA SIMPLES MENOS VERBOSA transferir ~~>
+
+  // this.transferencia = $event;
+
+  //FORMA ROBUSTA E VERBOSA
+
+  // this.destino = $event.destino;
+  // this.valor = $event.valor;
+
 }
