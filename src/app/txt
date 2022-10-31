@@ -1,0 +1,5 @@
+Para ativar no terminal
+
+API
+
+json-server --watch db.json

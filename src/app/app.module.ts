@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +28,7 @@ registerLocaleData(localePt,'pt');
   imports: [
     BrowserModule,
     FormsModule,  // Importado o modulo de formulario
-    ReactiveFormsModule,HttpClientModule,
+    ReactiveFormsModule,HttpClientModule,AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt' },  //para deichar a data em português

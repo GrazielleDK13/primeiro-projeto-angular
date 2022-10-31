@@ -2,7 +2,7 @@
 
 interface Transferencia {
 
-  data: string;
+  data?: string;
   valor: number | string;
   destino: number | string;
 

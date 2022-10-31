@@ -1,38 +1,45 @@
+<section class="container">
 
-<table class="tabela">
+  <h2 class="titulo">Transferência</h2>
 
-  <thead class="tabela__cabecalho">
+  <table class="tabela">
 
-    <th class="conteudo">Data</th>
-    <th class="conteudo">Valor</th>
-    <th class="conteudo">Destino</th>
+    <thead class="tabela__cabecalho">
 
-  </thead>
+      <th class="conteudo">Data</th>
+      <th class="conteudo">Valor</th>
+      <th class="conteudo">Destino</th>
 
-  <tbody class="tabela__linha" *ngIf="transferencias.length > 0; else listaVazia " >
+    </thead>
 
-    <!-- Exibir uma lista de dados através da diretiva *ngFor -->
+    <tbody class="tabela__linha" *ngIf="transferencias.length > 0; else listaVazia ">
 
-    <tr class="tabela__linha" *ngFor="let transferencia of transferencias">
+      <!-- Exibir uma lista de dados através da diretiva *ngFor -->
 
-      <!-- Para usar um modelo de data ,só olhar no site do angula e pesquisar DatePipe ,exemplo: short -->
-      <!-- Para deichar a data em português só olhar no site do angula e pesquisar LOCALE_ID ,a alteração vais ser feita na pasta app module-->
+      <tr class="tabela__linha" *ngFor="let transferencia of transferencias">
 
-      <td class="conteudo2">{{ transferencia.data  | date:'short'}}</td>
-      <td class="conteudo2">{{ transferencia.valor | currency }}</td>
-      <td class="conteudo2">{{ transferencia.destino }}</td>
+        <!-- Para usar um modelo de data ,só olhar no site do angula e pesquisar DatePipe ,exemplo: short -->
+        <!-- Para deichar a data em português só olhar no site do angula e pesquisar LOCALE_ID ,a alteração vais ser feita na pasta app module-->
 
-    </tr>
+        <td class="conteudo2">{{ transferencia.data | date:'short'}}</td>
+        <td class="conteudo2">{{ transferencia.valor | currency }}</td>
+        <td class="conteudo2">{{ transferencia.destino }}</td>
 
-  </tbody>
+      </tr>
 
-</table>
+    </tbody>
 
-<<ng-template #listaVazia>
+  </table>
 
-  <p> Nenhuma operação cadastrada </p>
+  <ng-template #listaVazia>
 
-</ng-template>
+    <p> Nenhuma operação cadastrada </p>
+
+  </ng-template>
+
+</section>
+
+
 
 
 

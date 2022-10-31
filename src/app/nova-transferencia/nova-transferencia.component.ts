@@ -1,3 +1,5 @@
+import { routes } from './../app-routing.module';
+import { Router, RouterModule } from '@angular/router';
 import { TransferenciaService } from './../services/transferencia.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import Transferencia from '../extrato/interfaces/Tranferencia';
@@ -7,6 +9,8 @@ import Transferencia from '../extrato/interfaces/Tranferencia';
   templateUrl: './nova-transferencia.component.html',
   styleUrls: ['./nova-transferencia.component.css'],
 })
+
+
 export class NovaTransferenciaComponent implements OnInit {
   //atributos
 
@@ -22,7 +26,11 @@ export class NovaTransferenciaComponent implements OnInit {
   valor!: number;
   destino!: number;
 
-  constructor(private service: TransferenciaService) {}
+  constructor(private service: TransferenciaService, private router:Router ) {}
+
+  ngOnInit(): void {
+
+  }
 
   // metodo
 
@@ -30,14 +38,18 @@ export class NovaTransferenciaComponent implements OnInit {
 
     console.log('Solicitada nova transferência');
 
-    const valorEmitir: Transferencia { valor: this.valor, destino: this.destino };
+    const valorEmitir: Transferencia = { valor: this.valor, destino: this.destino };
 
-    this.service.adicionar(valorEmitir)
+    this.service.adicionar(valorEmitir).subscribe(
+      (resultado) => {
+        console.log(resultado);
+         this.limparCampos();
+         this.router.navigateByUrl('extrato');
 
-    this.limparCampos();
+      },
+      (error) => console.error('error')
+      );
 
-    // console.log('valor: ', this.valor);   isso e para aparecer os valore no console
-    // console.log('Destino: ', this.destino); isso e para aparecer os valore no console
   }
 
   limparCampos() {
@@ -46,5 +58,12 @@ export class NovaTransferenciaComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {}
+
+
+
+
+
 }
+
+
+
