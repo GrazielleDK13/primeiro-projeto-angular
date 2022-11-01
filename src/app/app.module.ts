@@ -1,5 +1,5 @@
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +16,7 @@ registerLocaleData(localePt,'pt');
 
 @NgModule({
 
-  //  Declaração de component
+  // ~ DECLARAÇÃO DE COMPONENT ~
 
   declarations: [
     AppComponent,
@@ -27,11 +27,11 @@ registerLocaleData(localePt,'pt');
   ],
   imports: [
     BrowserModule,
-    FormsModule,  // Importado o modulo de formulario
+    FormsModule,  // Importado o Modulo de Formulario
     ReactiveFormsModule,HttpClientModule,AppRoutingModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'pt' },  //para deichar a data em português
+    {provide: LOCALE_ID, useValue: 'pt' },  //Para Deichar a Data em Português
     {
         provide: DEFAULT_CURRENCY_CODE,
         useValue: 'BRL'

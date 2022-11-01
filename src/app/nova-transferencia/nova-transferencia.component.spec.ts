@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NovaTransferenciaComponent } from './nova-transferencia.component';
 
 describe('NovaTransferenciaComponent', () => {

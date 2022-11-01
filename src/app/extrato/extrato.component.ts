@@ -1,5 +1,5 @@
 import { TransferenciaService } from './../services/transferencia.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Transferencia from './interfaces/Tranferencia';
 
 @Component({
@@ -7,6 +7,7 @@ import Transferencia from './interfaces/Tranferencia';
   templateUrl: './extrato.component.html',
   styleUrls: ['./extrato.component.css'],
 })
+
 export class ExtratoComponent implements OnInit {
 
   transferencias: Transferencia[] = [];

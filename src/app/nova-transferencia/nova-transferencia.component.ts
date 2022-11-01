@@ -1,5 +1,4 @@
-import { routes } from './../app-routing.module';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { TransferenciaService } from './../services/transferencia.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import Transferencia from '../extrato/interfaces/Tranferencia';
@@ -10,60 +9,49 @@ import Transferencia from '../extrato/interfaces/Tranferencia';
   styleUrls: ['./nova-transferencia.component.css'],
 })
 
-
 export class NovaTransferenciaComponent implements OnInit {
-  //atributos
+
+  // ~ ATRIBUTOS ~
 
   // public valor  = '';
   // public destino = '';
 
   @Output() aoTranferir = new EventEmitter<any>(); //DUVIDA
 
-  // o @Output() serve para criar um evento ele e um decoraitor
+  //  @Output É o que a gente usa pra passar algo de um componente filho pra um componente pai.
+  //  o EventEmitter Ele identifica um evento que acontece na página
 
-  //valores do input
+  // VALORES DO INPUT
 
   valor!: number;
   destino!: number;
 
-  constructor(private service: TransferenciaService, private router:Router ) {}
+  constructor(private service: TransferenciaService, private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-
-  // metodo
+  // ~ METODO ~
 
   transferir() {
-
     console.log('Solicitada nova transferência');
 
-    const valorEmitir: Transferencia = { valor: this.valor, destino: this.destino };
+    const valorEmitir: Transferencia = {
+      valor: this.valor,
+      destino: this.destino,
+    };
 
     this.service.adicionar(valorEmitir).subscribe(
       (resultado) => {
         console.log(resultado);
-         this.limparCampos();
-         this.router.navigateByUrl('extrato');
-
+        this.limparCampos();
+        this.router.navigateByUrl('extrato');
       },
-      (error) => console.error('error')
-      );
-
+      (error) => console.error(error)
+    );
   }
 
   limparCampos() {
     this.valor = 0;
     this.destino = 0;
   }
-
-
-
-
-
-
-
 }
-
-
-

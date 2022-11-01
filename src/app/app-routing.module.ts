@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 
 import { Routes } from '@angular/router';
 
+
 export const routes: Routes = [
 
   {path: '', redirectTo: 'extrato',pathMatch:'full'},
@@ -17,7 +18,7 @@ export const routes: Routes = [
 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-  
+
 })
 
 export class AppRoutingModule{}

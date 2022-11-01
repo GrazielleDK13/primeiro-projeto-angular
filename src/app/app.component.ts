@@ -11,8 +11,6 @@ export class AppComponent {
 
   title = 'appangular';
 
-
-
   constructor(private service: TransferenciaService){}
 
 
@@ -20,7 +18,7 @@ export class AppComponent {
 
   // this.transferencia = $event;
 
-  //FORMA ROBUSTA E VERBOSA
+  // ~ FORMA ROBUSTA E VERBOSA ~
 
   // this.destino = $event.destino;
   // this.valor = $event.valor;

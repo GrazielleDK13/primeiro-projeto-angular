@@ -51,11 +51,11 @@
 
 }
 
-.cancelar {
+.botao.cancelar {
   background-color: var(--secondary);
   margin-left: 20px;
 }
 
-:hover {
+.botao:hover {
   opacity: 0.8;
 }
